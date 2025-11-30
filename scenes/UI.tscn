@@ -1,0 +1,117 @@
+[gd_scene load_steps=10 format=3 uid="uid://dvlua0cifr5qe"]
+
+[ext_resource type="Texture2D" uid="uid://ikw1q1o4clr2" path="res://assets/sprites/black.png" id="1_75u2n"]
+[ext_resource type="Texture2D" uid="uid://b8qu6a3ce5ko5" path="res://assets/sprites/tiles/flag4.png" id="1_ua6yw"]
+[ext_resource type="Script" uid="uid://c83rmm8pnl54r" path="res://scripts/black_background.gd" id="2_3wlde"]
+[ext_resource type="Texture2D" uid="uid://bon8s6x75lxr" path="res://assets/sprites/bullet sprites/green_dash.png" id="2_ro3t7"]
+[ext_resource type="Texture2D" uid="uid://ds35vf182jy06" path="res://assets/sprites/bullet sprites/green_invulnerability.png" id="2_ua6yw"]
+[ext_resource type="Texture2D" uid="uid://dht5efrcfyf8y" path="res://assets/sprites/bullet sprites/green_life_saver.png" id="4_75u2n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ukj8e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3wlde"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_24e4x"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="BlackBackground1" type="Sprite2D" parent="."]
+position = Vector2(1092.22, 116)
+scale = Vector2(1.38182, 2.02083)
+texture = ExtResource("1_75u2n")
+script = ExtResource("2_3wlde")
+
+[node name="BlackBackground2" type="Sprite2D" parent="."]
+position = Vector2(973.609, 46)
+scale = Vector2(1.95653, 0.562498)
+texture = ExtResource("1_75u2n")
+script = ExtResource("2_3wlde")
+
+[node name="FlagCounter" type="HBoxContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -107.0
+offset_top = 25.0
+offset_right = -84.0
+offset_bottom = 48.0
+grow_horizontal = 0
+alignment = 2
+
+[node name="Label" type="Label" parent="FlagCounter"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_ukj8e")
+
+[node name="Sprite2D" type="Sprite2D" parent="FlagCounter"]
+position = Vector2(32, 12)
+texture = ExtResource("1_ua6yw")
+
+[node name="InvulnerbilityCounter" type="HBoxContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -107.0
+offset_top = 70.0
+offset_right = -84.0
+offset_bottom = 93.0
+grow_horizontal = 0
+alignment = 2
+
+[node name="Label" type="Label" parent="InvulnerbilityCounter"]
+layout_mode = 2
+text = "0"
+
+[node name="Sprite2D" type="Sprite2D" parent="InvulnerbilityCounter"]
+position = Vector2(32, 12)
+texture = ExtResource("2_ua6yw")
+
+[node name="DashCounter" type="HBoxContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -107.0
+offset_top = 160.0
+offset_right = -84.0
+offset_bottom = 183.0
+grow_horizontal = 0
+alignment = 2
+
+[node name="Label" type="Label" parent="DashCounter"]
+layout_mode = 2
+text = "0"
+
+[node name="Sprite2D" type="Sprite2D" parent="DashCounter"]
+position = Vector2(32, 12)
+texture = ExtResource("2_ro3t7")
+
+[node name="LifelineCounter" type="HBoxContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -107.0
+offset_top = 115.0
+offset_right = -84.0
+offset_bottom = 138.0
+grow_horizontal = 0
+alignment = 2
+
+[node name="Label" type="Label" parent="LifelineCounter"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_3wlde")
+
+[node name="Sprite2D" type="Sprite2D" parent="LifelineCounter"]
+position = Vector2(32, 12)
+texture = ExtResource("4_75u2n")
+
+[node name="GameTime" type="HBoxContainer" parent="."]
+offset_left = 933.0
+offset_top = -16.0
+offset_right = 1044.0
+offset_bottom = 48.0
+
+[node name="TimeLabel" type="Label" parent="GameTime"]
+layout_mode = 2
+text = "00:00"
+label_settings = SubResource("LabelSettings_24e4x")

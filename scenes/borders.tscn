@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4cmlk00ffj3o"]
+
+[ext_resource type="Texture2D" uid="uid://dynwcirfgwlwr" path="res://assets/sprites/tiles/border_tiles.png" id="1_gk66m"]
+[ext_resource type="Script" uid="uid://cyp4dpa7ig2jk" path="res://scripts/borders.gd" id="2_paltn"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_paltn"]
+texture = ExtResource("1_gk66m")
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[sub_resource type="TileSet" id="TileSet_6g6co"]
+tile_size = Vector2i(24, 24)
+physics_layer_0/collision_layer = 2
+sources/0 = SubResource("TileSetAtlasSource_paltn")
+
+[node name="Borders" type="TileMapLayer"]
+tile_set = SubResource("TileSet_6g6co")
+script = ExtResource("2_paltn")

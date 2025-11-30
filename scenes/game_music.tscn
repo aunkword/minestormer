@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cas07qtfojrb3"]
+
+[ext_resource type="AudioStream" uid="uid://d2n5itm5l8vuw" path="res://assets/music/funny_lil_beat.mp3" id="1_aw8cc"]
+
+[node name="Music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_aw8cc")
+autoplay = true
+bus = &"Music"

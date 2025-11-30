@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://be34spwgqpwsk"]
+
+[ext_resource type="Script" uid="uid://c4g4bb3gakijc" path="res://scripts/cover.gd" id="1_j4as2"]
+
+[node name="Cover" type="TileMapLayer"]
+script = ExtResource("1_j4as2")

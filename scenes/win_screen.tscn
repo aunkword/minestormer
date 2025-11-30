@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyw1mhxa5g2ko"]
+
+[ext_resource type="Script" uid="uid://xg04gwvern0p" path="res://scripts/win_screen.gd" id="1_wv5lq"]
+[ext_resource type="Texture2D" uid="uid://d1pefby7qm7uw" path="res://assets/sprites/backdrop.png" id="2_erk2x"]
+
+[sub_resource type="Theme" id="Theme_wv5lq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_erk2x"]
+font_size = 75
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2l6cc"]
+font_size = 75
+font_color = Color(0, 0, 0, 1)
+
+[node name="WinScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wv5lq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(554, 323)
+scale = Vector2(1.92113, 1.92113)
+texture = ExtResource("2_erk2x")
+
+[node name="MainMenu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 508.0
+offset_top = 276.0
+offset_right = 647.0
+offset_bottom = 322.0
+text = "Main Menu"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 169.0
+offset_right = 739.0
+offset_bottom = 272.0
+theme = SubResource("Theme_wv5lq")
+theme_override_font_sizes/font_size = 200
+text = "YOU WIN"
+label_settings = SubResource("LabelSettings_erk2x")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 324.0
+offset_right = 714.0
+offset_bottom = 427.0
+text = "Final Score:"
+label_settings = SubResource("LabelSettings_2l6cc")
+
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]

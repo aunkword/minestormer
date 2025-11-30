@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmak5u2128diq"]
+
+[ext_resource type="Script" uid="uid://db4do3bkiqq0r" path="res://scripts/title_screen.gd" id="1_fgkus"]
+[ext_resource type="Texture2D" uid="uid://d1pefby7qm7uw" path="res://assets/sprites/backdrop.png" id="2_sa3yf"]
+[ext_resource type="Texture2D" uid="uid://boxwecc6mkibm" path="res://assets/sprites/logo.png" id="3_s4lrb"]
+[ext_resource type="AudioStream" uid="uid://c20xdl401v8dc" path="res://assets/music/menu_music.mp3" id="4_mgrm8"]
+
+[sub_resource type="Theme" id="Theme_ak2if"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fgkus")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(554, 323)
+scale = Vector2(1.92113, 1.92113)
+texture = ExtResource("2_sa3yf")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(576, 165)
+texture = ExtResource("3_s4lrb")
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 508.0
+offset_top = 367.0
+offset_right = 648.0
+offset_bottom = 414.0
+theme = SubResource("Theme_ak2if")
+theme_override_colors/font_outline_color = Color(0.67451, 0, 0, 1)
+text = "Start"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 509.0
+offset_top = 461.0
+offset_right = 649.0
+offset_bottom = 507.0
+text = "Quit"
+
+[node name="Menu-music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mgrm8")
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

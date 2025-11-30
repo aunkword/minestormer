@@ -1,0 +1,150 @@
+[gd_scene load_steps=23 format=3 uid="uid://j865srqi434y"]
+
+[ext_resource type="Script" uid="uid://cqukektdul8fu" path="res://scripts/game.gd" id="1_p57ef"]
+[ext_resource type="Texture2D" uid="uid://dwladrtqnh1wb" path="res://assets/sprites/grid_tiles.png" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://5u206oa8qa8k" path="res://scenes/blanks.tscn" id="2_gee14"]
+[ext_resource type="Texture2D" uid="uid://c8g8otawi7yem" path="res://assets/sprites/grid_tiles_2.png" id="2_iywne"]
+[ext_resource type="PackedScene" uid="uid://dvlua0cifr5qe" path="res://scenes/UI.tscn" id="2_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://dm1jqkdacurt0" path="res://scenes/tiles.tscn" id="2_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://be34spwgqpwsk" path="res://scenes/cover.tscn" id="2_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://sk8qyvt1yqo6" path="res://scenes/player.tscn" id="2_yqjtg"]
+[ext_resource type="Script" uid="uid://dnn451smb2ans" path="res://scripts/player.gd" id="3_lnu2h"]
+[ext_resource type="Script" uid="uid://d2336vb24qyxd" path="res://scripts/level_1.gd" id="3_trtic"]
+[ext_resource type="PackedScene" uid="uid://dah5k21jxvfh1" path="res://scenes/flags.tscn" id="7_vtaks"]
+[ext_resource type="Script" uid="uid://45np5vm70j0l" path="res://scripts/flags.gd" id="8_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://c4cmlk00ffj3o" path="res://scenes/borders.tscn" id="10_dinhu"]
+[ext_resource type="Script" uid="uid://ejugfayy77aj" path="res://scripts/level_2.gd" id="12_ir15t"]
+[ext_resource type="Script" uid="uid://d21a42jfxg71c" path="res://scripts/level_3.gd" id="13_ca42v"]
+[ext_resource type="PackedScene" uid="uid://drs6gv6onrr3a" path="res://scenes/cannon.tscn" id="13_kvuet"]
+[ext_resource type="Script" uid="uid://bq05v8wo4bn53" path="res://scenes/cannons.gd" id="16_rysoc"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
+texture = ExtResource("2_iywne")
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u5sy4"]
+texture = ExtResource("1_uwrxv")
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_gee14"]
+tile_size = Vector2i(24, 24)
+sources/0 = SubResource("TileSetAtlasSource_p57ef")
+sources/1 = SubResource("TileSetAtlasSource_u5sy4")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gee14"]
+texture = ExtResource("1_uwrxv")
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_0tnpc"]
+tile_size = Vector2i(24, 24)
+sources/1 = SubResource("TileSetAtlasSource_gee14")
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_p57ef")
+
+[node name="UI" parent="." instance=ExtResource("2_kvpfn")]
+
+[node name="Level1" type="Node2D" parent="."]
+script = ExtResource("3_trtic")
+
+[node name="Blanks1" parent="Level1" instance=ExtResource("2_gee14")]
+unique_name_in_owner = true
+
+[node name="Tiles1" parent="Level1" instance=ExtResource("2_lbhrr")]
+unique_name_in_owner = true
+tile_set = SubResource("TileSet_gee14")
+
+[node name="Cover1" parent="Level1" instance=ExtResource("2_u5sy4")]
+unique_name_in_owner = true
+tile_set = SubResource("TileSet_0tnpc")
+
+[node name="Flags1" parent="Level1" instance=ExtResource("7_vtaks")]
+unique_name_in_owner = true
+script = ExtResource("8_kvpfn")
+
+[node name="Level2" type="Node2D" parent="."]
+script = ExtResource("12_ir15t")
+
+[node name="Blanks2" parent="Level2" instance=ExtResource("2_gee14")]
+unique_name_in_owner = true
+
+[node name="Tiles2" parent="Level2" instance=ExtResource("2_lbhrr")]
+unique_name_in_owner = true
+tile_set = SubResource("TileSet_gee14")
+
+[node name="Cover2" parent="Level2" instance=ExtResource("2_u5sy4")]
+unique_name_in_owner = true
+tile_set = SubResource("TileSet_0tnpc")
+
+[node name="Flags2" parent="Level2" instance=ExtResource("7_vtaks")]
+unique_name_in_owner = true
+script = ExtResource("8_kvpfn")
+
+[node name="Level3" type="Node2D" parent="."]
+script = ExtResource("13_ca42v")
+
+[node name="Blanks3" parent="Level3" instance=ExtResource("2_gee14")]
+unique_name_in_owner = true
+
+[node name="Tiles3" parent="Level3" instance=ExtResource("2_lbhrr")]
+unique_name_in_owner = true
+tile_set = SubResource("TileSet_gee14")
+
+[node name="Cover3" parent="Level3" instance=ExtResource("2_u5sy4")]
+unique_name_in_owner = true
+tile_set = SubResource("TileSet_0tnpc")
+
+[node name="Flags3" parent="Level3" instance=ExtResource("7_vtaks")]
+unique_name_in_owner = true
+script = ExtResource("8_kvpfn")
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="Player" parent="Player" instance=ExtResource("2_yqjtg")]
+position = Vector2(12, 12)
+script = ExtResource("3_lnu2h")
+
+[node name="Camera2D" type="Camera2D" parent="Player/Player"]
+position = Vector2(1, 1)
+zoom = Vector2(2, 2)
+
+[node name="Borders" type="Node2D" parent="."]
+
+[node name="Borders1" parent="Borders" instance=ExtResource("10_dinhu")]
+unique_name_in_owner = true
+
+[node name="Borders2" parent="Borders" instance=ExtResource("10_dinhu")]
+unique_name_in_owner = true
+
+[node name="Borders3" parent="Borders" instance=ExtResource("10_dinhu")]
+unique_name_in_owner = true
+
+[node name="Cannons" type="Node2D" parent="."]
+script = ExtResource("16_rysoc")
+
+[node name="Cannon1_1" parent="Cannons" instance=ExtResource("13_kvuet")]
+unique_name_in_owner = true
+rotation = 3.14159
+
+[node name="Cannon1_2" parent="Cannons" instance=ExtResource("13_kvuet")]
+unique_name_in_owner = true
+rotation = 3.14159
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="ShootTimer" to="Cannons/Cannon1_1" method="_on_timer_timeout_1"]
+[connection signal="timeout" from="ShootTimer" to="Cannons/Cannon1_2" method="_on_timer_timeout_2"]

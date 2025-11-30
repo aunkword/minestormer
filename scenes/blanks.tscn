@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://5u206oa8qa8k"]
+
+[ext_resource type="Texture2D" uid="uid://c8g8otawi7yem" path="res://assets/sprites/tiles/grid_tiles_2.png" id="1_gw7cb"]
+[ext_resource type="Script" uid="uid://dhiskkovqxqbc" path="res://scripts/blanks.gd" id="2_bayc7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bayc7"]
+texture = ExtResource("1_gw7cb")
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ux40o"]
+tile_size = Vector2i(24, 24)
+sources/0 = SubResource("TileSetAtlasSource_bayc7")
+
+[node name="Blanks" type="TileMapLayer"]
+tile_set = SubResource("TileSet_ux40o")
+script = ExtResource("2_bayc7")

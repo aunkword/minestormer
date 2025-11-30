@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://dm1jqkdacurt0"]
+
+[ext_resource type="Texture2D" uid="uid://dwladrtqnh1wb" path="res://assets/sprites/tiles/grid_tiles.png" id="1_od8sr"]
+[ext_resource type="Texture2D" uid="uid://c8g8otawi7yem" path="res://assets/sprites/tiles/grid_tiles_2.png" id="2_jhpg2"]
+[ext_resource type="Script" uid="uid://d2s8qnabvonfq" path="res://scripts/tiles.gd" id="3_jhpg2"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i3m0d"]
+texture = ExtResource("1_od8sr")
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+2:0/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p5lnq"]
+texture = ExtResource("2_jhpg2")
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ddpu7"]
+sources/0 = SubResource("TileSetAtlasSource_i3m0d")
+sources/1 = SubResource("TileSetAtlasSource_p5lnq")
+
+[node name="Tiles" type="TileMapLayer"]
+tile_set = SubResource("TileSet_ddpu7")
+script = ExtResource("3_jhpg2")

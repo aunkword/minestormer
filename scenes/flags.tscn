@@ -1,0 +1,36 @@
+[gd_scene load_steps=10 format=3 uid="uid://dah5k21jxvfh1"]
+
+[ext_resource type="Texture2D" uid="uid://dns4p5alkcqq0" path="res://assets/sprites/tiles/flag3.png" id="1_n4n6i"]
+[ext_resource type="Texture2D" uid="uid://ddo7ut6s23h3d" path="res://assets/sprites/tiles/flag.png" id="1_wipo8"]
+[ext_resource type="Texture2D" uid="uid://bmsh4h62rijar" path="res://assets/sprites/tiles/flag2.png" id="2_4p1sy"]
+[ext_resource type="Texture2D" uid="uid://b8qu6a3ce5ko5" path="res://assets/sprites/tiles/flag4.png" id="4_e6vwc"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e6vwc"]
+texture = ExtResource("1_n4n6i")
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_okeva"]
+texture = ExtResource("1_wipo8")
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n4n6i"]
+texture = ExtResource("2_4p1sy")
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j5w1v"]
+texture = ExtResource("4_e6vwc")
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_o3fi6"]
+tile_size = Vector2i(24, 24)
+sources/1 = SubResource("TileSetAtlasSource_okeva")
+sources/2 = SubResource("TileSetAtlasSource_n4n6i")
+sources/0 = SubResource("TileSetAtlasSource_e6vwc")
+sources/3 = SubResource("TileSetAtlasSource_j5w1v")
+
+[node name="Flags" type="TileMapLayer"]
+tile_set = SubResource("TileSet_o3fi6")
